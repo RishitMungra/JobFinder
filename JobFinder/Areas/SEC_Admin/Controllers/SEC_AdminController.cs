@@ -1,9 +1,11 @@
 ﻿using JobFinder.DAL.SEC_Admin;
+using JobFinder.BAL;
 using Microsoft.AspNetCore.Mvc;
 using System.Data;
 
 namespace JobFinder.Areas.SEC_Admin.Controllers
 {
+    [CheckAccess]
     [Area("SEC_Admin")]
     [Route("SEC_Admin/[controller]/[action]")]
     public class SEC_AdminController : Controller

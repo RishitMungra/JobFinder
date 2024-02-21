@@ -81,5 +81,13 @@ namespace JobFinder.Areas.Job.Controllers
             return View(dataTable);
         }
         #endregion
+
+        #region Job List By ID (User Side)
+        public IActionResult FindJobByID(int JobID)
+        {
+            DataTable dataTable = JobDAL.FindJobByID(JobID);
+            return View(dataTable);
+        }
+        #endregion
     }
 }

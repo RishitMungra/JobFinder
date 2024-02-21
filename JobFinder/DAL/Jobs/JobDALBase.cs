@@ -120,5 +120,27 @@ namespace JobFinder.DAL.Job
             }
         }
         #endregion
+
+        #region Method : Job List By ID
+        public DataTable FindJobByID(int ProductID)
+        {
+            try
+            {
+                SqlDatabase sqlDatabase = new SqlDatabase(ConnectionString);
+                DbCommand dbCommand = sqlDatabase.GetStoredProcCommand("Job_SelectByID");
+                sqlDatabase.AddInParameter(dbCommand, "@JobID", DbType.Int32, ProductID);
+                DataTable dataTable = new DataTable();
+                using (IDataReader dataReader = sqlDatabase.ExecuteReader(dbCommand))
+                {
+                    dataTable.Load(dataReader);
+                }
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+        #endregion
     }
 }
