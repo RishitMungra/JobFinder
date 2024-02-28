@@ -10,6 +10,7 @@ namespace JobFinder.Areas.SEC_User.Controllers
     public class SEC_UserController : Controller
     {
         SEC_UserDAL sEC_UserDAL = new SEC_UserDAL();
+
         #region SEC_UserSignIn
         public IActionResult SEC_UserSignIn()
         {

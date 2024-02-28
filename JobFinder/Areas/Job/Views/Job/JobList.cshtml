@@ -131,7 +131,7 @@
                                                         <form method="post" asp-area="Job" asp-controller="Job" asp-action="JobDelete">
                                                             <div>
                                                                 <input type="hidden" value="@Convert.ToInt32(dataRow["JobID"])" name="JobID">
-                                                                <button type="submit" class="btn btn-outline-danger btn-xs ">
+                                                                <button type="submit" class="btn btn-outline-danger btn-xs " onclick="return fun1()">
                                                                     <i class="ki-duotone ki-cross-square fs-2x">
                                                                         <span class="path1"></span>
                                                                         <span class="path2"></span>
@@ -178,5 +178,14 @@
                 });
             });
         });
+        function fun1() {
+            if (confirm("Are you sure you want to Delete record?")) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
     </script>
 }
+

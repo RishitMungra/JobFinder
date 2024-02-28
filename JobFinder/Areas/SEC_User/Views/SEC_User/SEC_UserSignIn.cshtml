@@ -39,14 +39,15 @@
                                     <!--begin::Heading-->
                                     <div class="text-center mb-11">
                                         <!--begin::Title-->
-                                        <h1 class="text-gray-900 fw-bolder mb-3">Sign In</h1>
+                                        <div class="logo">
+                                            <a asp-controller="Home" asp-action="Index"><img src="assets/img/logo/logo.png" alt=""></a>
+                                        </div>
+                                        <h1 class="text-gray-900 fw-bolder mb-3 m-2">Sign In</h1>
                                         <!--end::Title-->
                                     </div>
                                     <!--begin::Heading-->
                                     <!--begin::Separator-->
-                                    <div class="separator separator-content my-14">
-                                        <span class="w-125px text-gray-500 fw-semibold fs-7"></span>
-                                    </div>
+                                    
                                     <lable><div class="text-danger">@Html.Raw(TempData["Error"]) </div></lable>
                                     <!--end::Separator-->
                                     <!--begin::Input group=-->
