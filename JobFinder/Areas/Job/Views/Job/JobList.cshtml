@@ -69,7 +69,7 @@
                                     <!--end::Card title-->
                                     <div class="card-toolbar">
                                         <!--begin::Add customer-->
-                                        <a asp-area="Job" asp-controller="Job" asp-action="JobAdd" class="btn btn-primary m-2">Add Job</a>
+                                        <a asp-area="Job" asp-controller="Job" asp-action="JobAdd" class="btn btn-primary m-2" id="addJobButton">Add Job</a>
                                         <!--end::Add customer-->
                                         <!--begin::Back Button-->
                                         <a asp-area="SEC_Admin" asp-controller="SEC_Admin" asp-action="SEC_AdminDashboard" class="btn btn-secondary">Back</a>
@@ -131,7 +131,7 @@
                                                         <form method="post" asp-area="Job" asp-controller="Job" asp-action="JobDelete">
                                                             <div>
                                                                 <input type="hidden" value="@Convert.ToInt32(dataRow["JobID"])" name="JobID">
-                                                                <button type="submit" class="btn btn-outline-danger btn-xs " onclick="return fun1()">
+                                                                <button type="submit" class="btn btn-outline-danger btn-xs " >
                                                                     <i class="ki-duotone ki-cross-square fs-2x">
                                                                         <span class="path1"></span>
                                                                         <span class="path2"></span>
@@ -167,6 +167,18 @@
         </div>
     </div>
 </div>
+@* <div class="modal" id="addJobModal" tabindex="-1" role="dialog" aria-labelledby="addJobModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" style="max-width: 50%;" role="document">
+        <div class="modal-content">
+            <div class="modal-body d-flex justify-content-center" id="addJobModalBody">
+                <!-- Content will be loaded here via AJAX -->
+            </div>
+        </div>
+    </div>
+</div> *@
+
+
+
 @section Scripts
     {
     <script>
@@ -178,14 +190,18 @@
                 });
             });
         });
-        function fun1() {
-            if (confirm("Are you sure you want to Delete record?")) {
-                return true;
-            }
-            else {
-                return false;
-            }
-        }
+        // $(document).ready(function () {
+        //     // Handle click event of Add button
+        //     $('#addJobButton').click(function (e) {
+        //         e.preventDefault();
+
+        //         // Load Job Add view into the modal via AJAX
+        //         $('#addJobModalBody').load('@Url.Action("JobAdd", "Job")', function () {
+        //             // Show the modal when content is loaded
+        //             $('#addJobModal').modal('show');
+        //         });
+        //     });
+        // });
     </script>
 }
 

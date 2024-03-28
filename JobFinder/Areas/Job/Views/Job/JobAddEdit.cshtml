@@ -34,7 +34,7 @@
                                     </li>
                                     <!--end::Item-->
                                     <!--begin::Item-->
-                                    <li class="breadcrumb-item text-muted">Catalog</li>
+                                    <li class="breadcrumb-item text-muted">Job Add/Edit</li>
                                     <!--end::Item-->
                                 </ul>
                                 <!--end::Breadcrumb-->
@@ -48,19 +48,26 @@
                     <div id="kt_app_content" class="app-content flex-column-fluid">
                         <!--begin::Content container-->
                         <div id="kt_app_content_container" class="app-container container-xxl">
-                
-                            <form enctype="multipart/form-data"  method="post" asp-area="Job" asp-controller="Job" asp-action="JobSave">
+
+                            <form enctype="multipart/form-data" method="post" asp-area="Job" asp-controller="Job" asp-action="JobSave">
                                 @Html.HiddenFor(x=>x.JobID)
 
                                 <div asp-validation-summary="All" class="text-danger"></div>
 
                                 <div class="card-body">
-                                    <div class="form-floating form-floating-outline mb-4">
-                                        <input type="text" name="Title" class="form-control" id="ecommerce-product-name" placeholder="Job Name" asp-for="Title" aria-label="Job Name" required>
-                                        <label for="ecommerce-product-name">Job Name</label>
+
+                                    <div class="mb-10 fv-row">
+                                        <!--begin::Label-->
+                                        <label class="required form-label">Job Name</label>
+                                        <!--end::Label-->
+                                        <!--begin::Input-->
+                                        <input type="text" name="Title" class="form-control" id="ecommerce-product-name" placeholder="Job Name" asp-for="Title" aria-label="Job Name" required />
+                                        <!--end::Input-->
+                                        <!--begin::Description-->
+                                        <span asp-validation-for="Title" class="text-danger"></span>
+                                        <!--end::Description-->
                                     </div>
 
-                        
                                     <div class="mb-10 fv-row">
                                         <!--begin::Label-->
                                         <label class="required form-label">Description</label>
@@ -124,7 +131,7 @@
                                     </div>
                                 </div>
                             </form>
-                
+
                         </div>
                         <!--end::Content container-->
                     </div>

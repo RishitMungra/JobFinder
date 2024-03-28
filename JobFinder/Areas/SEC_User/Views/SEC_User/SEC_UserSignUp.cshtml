@@ -1,4 +1,5 @@
-﻿@{
+﻿﻿@{
+    ViewData["Title"] = "Sign Up";
     Layout = "~/Views/Shared/_Layout_SignUp.cshtml";
 }
 
@@ -14,124 +15,118 @@
     <!--begin::Page bg image-->
     <style>
         body {
-            background-image: url('~/media/auth/bg10.jpeg');
+            background-image: url('~/assets2/media/auth/bg10.jpeg');
         }</style>
     <!--end::Page bg image-->
     <!--begin::Authentication - Sign-up -->
-    <div class="d-flex flex-column flex-lg-row flex-column-fluid justify-content-lg-center">
-       
-        <!--begin::Body-->
-        <div class="d-flex flex-column-fluid flex-lg-row-auto justify-content-center justify-content-lg-end p-12">
-            <!--begin::Wrapper-->
-            <div class="bg-body d-flex flex-column flex-center rounded-4 w-md-550px p-10 shadow">
-                <!--begin::Content-->
-                <div class="d-flex flex-center flex-column align-items-stretch h-lg-100 w-md-400px">
-                    <!--begin::Wrapper-->
-                    <div class="d-flex flex-center flex-column flex-column-fluid pb-15 pb-lg-20">
-                        <!--begin::Form-->
-                        <form class="form w-100" id="kt_sign_up_form" data-kt-redirect-url="authentication/layouts/overlay/sign-in.html" asp-area="SEC_User" asp-controller="SEC_User" asp-action="Register">
-                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                            <!--begin::Heading-->
-                            <div class="text-center mb-11">
-                                <!--begin::Title-->
-                                <div class="logo">
-                                    <a asp-controller="Home" asp-action="Index"><img src="assets/img/logo/logo.png" alt=""></a>
+    <div class="d-flex flex-column flex-lg-row flex-column-fluid">
+        <div class="d-flex flex-lg-row-fluid justify-content-lg-center ">
+            <!--begin::Body-->
+            <div class="d-flex flex-column-fluid flex-lg-row-auto justify-content-center justify-content-lg-end p-12">
+                <!--begin::Wrapper-->
+                <div class="bg-body d-flex flex-column flex-center rounded-4 w-md-600px p-10 shadow">
+                    <!--begin::Content-->
+                    <div class="d-flex flex-center flex-column align-items-stretch h-lg-100 w-md-400px">
+                        <!--begin::Wrapper-->
+                        <div class="d-flex flex-center flex-column flex-column-fluid pb-15 pb-lg-20">
+                            <!--begin::Form-->
+                            <form class="form w-100" data-kt-redirect-url="authentication/layouts/overlay/sign-in.html" asp-area="SEC_User" asp-controller="SEC_User" asp-action="Register">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <!--begin::Heading-->
+                                <div class="text-center mb-11">
+                                    <div class="logo">
+                                        <a asp-controller="Home" asp-action="Index"><img src="assets/img/logo/logo.png" alt=""></a>
+                                    </div>
+                                    <!--begin::Title-->
+                                    <h1 class="text-gray-900 fw-bolder mb-3">Sign Up</h1>
+                                    <!--end::Title-->
                                 </div>
-                                <h1 class="text-gray-900 fw-bolder mb-3 m-2">Sign Up</h1>
-                                <!--end::Title-->
-                            </div>
-                            <!--begin::Heading-->
-                            <!--begin::Separator-->
-                            
-                            <!--end::Separator-->
-                            <!--begin::Input group=-->
-                            <div class="fv-row mb-8">
-                                <!--begin::Email-->
-                                <input type="text" placeholder="User Name" autocomplete="off" asp-for="UserName" class="form-control bg-transparent" required />
-                                <div class="text-danger">@Html.Raw(TempData["UserNameError"]) </div>
-                                <!--end::Email-->
-                            </div>
-                            <!--end::Input group=-->
-                            <!--begin::Input group=-->
-                            <div class="fv-row mb-8">
-                                <!--begin::Email-->
-                                <input type="text" placeholder="Password" autocomplete="off" asp-for="Password" class="form-control bg-transparent" required />
-                                <div class="text-danger">@Html.Raw(TempData["PasswordError"]) </div>
-                                <!--end::Email-->
-                            </div>
-                            <!--end::Input group=-->
-                            <!--begin::Input group=-->
-                            <div class="fv-row mb-8">
-                                <!--begin::Email-->
-                                <input type="text" placeholder="First Name" autocomplete="off" asp-for="FirstName" class="form-control bg-transparent" required />
-                                <div class="text-danger">@Html.Raw(TempData["FirstNameError"]) </div>
-                                <!--end::Email-->
-                            </div>
-                            <!--end::Input group=-->
-                            <!--begin::Input group=-->
-                            <div class="fv-row mb-8">
-                                <!--begin::Email-->
-                                <input type="text" placeholder="Last Name" autocomplete="off" asp-for="LastName" class="form-control bg-transparent" required />
-                                <div class="text-danger">@Html.Raw(TempData["LastNameError"]) </div>
-                                <!--end::Email-->
-                            </div>
-                            <!--end::Input group=-->
-                            <!--begin::Input group=-->
-                            <div class="fv-row mb-8">
-                                <!--begin::Email-->
-                                <input type="text" placeholder="Email Address" autocomplete="off" asp-for="EmailAddress" class="form-control bg-transparent" required />
-                                <div class="text-danger">@Html.Raw(TempData["EmailAddressError"]) </div>
-                                <!--end::Email-->
-                            </div>
-                            <!--end::Input group=-->
-                            <!--begin::Accept-->
-                            <div class="fv-row mb-8">
-                                <label class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" name="toc" value="1" />
-                                    <span class="form-check-label fw-semibold text-gray-700 fs-base ms-1">
-                                        I Accept the
-                                        <a class="ms-1 link-primary">Terms</a>
-                                    </span>
-                                </label>
-                            </div>
-                            <!--end::Accept-->
-                            <!--begin::Submit button-->
-                            <div class="d-grid mb-10">
-                                <button type="submit" id="kt_sign_up_submit" class="btn btn-primary">
-                                    <!--begin::Indicator label-->
-                                    <span class="indicator-label">Sign up</span>
-                                    <!--end::Indicator label-->
-                                    <!--begin::Indicator progress-->
-                                    <span class="indicator-progress">
-                                        Please wait...
-                                        <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
-                                    </span>
-                                    <!--end::Indicator progress-->
-                                </button>
-                            </div>
-                            <!--end::Submit button-->
-                            <!--begin::Sign up-->
-                            <div class="text-gray-500 text-center fw-semibold fs-6">
-                                Already have an Account?
-                                <a asp-area="SEC_User" asp-controller="SEC_User" asp-action="SEC_UserSignIn" class="link-primary fw-semibold">Sign in</a>
-                            </div>
-                            <!--end::Sign up-->
-                        </form>
-                        <!--end::Form-->
+                                <!--begin::Heading-->
+                                
+                                <!--begin::Input group=-->
+                                <div class="fv-row mb-8">
+                                    <!--begin::Email-->
+                                    <input type="text" placeholder="User Name" autocomplete="off" asp-for="UserName" class="form-control bg-transparent" required />
+                                    <div class="text-danger">@Html.Raw(TempData["UserNameError"]) </div>
+                                    <!--end::Email-->
+                                </div>
+                                <!--end::Input group=-->
+                                <!--begin::Input group=-->
+                                <div class="fv-row mb-8">
+                                    <!--begin::Email-->
+                                    <input type="password" placeholder="Password" autocomplete="off" asp-for="Password" class="form-control bg-transparent" required />
+                                    <div class="text-danger">@Html.Raw(TempData["PasswordError"]) </div>
+                                    <!--end::Email-->
+                                </div>
+                                <!--end::Input group=-->
+                                <!--begin::Input group=-->
+                                <div class="fv-row mb-8">
+                                    <!--begin::Email-->
+                                    <input type="text" placeholder="First Name" autocomplete="off" asp-for="FirstName" class="form-control bg-transparent" required />
+                                    <div class="text-danger">@Html.Raw(TempData["FirstNameError"]) </div>
+                                    <!--end::Email-->
+                                </div>
+                                <!--end::Input group=-->
+                                <!--begin::Input group=-->
+                                <div class="fv-row mb-8">
+                                    <!--begin::Email-->
+                                    <input type="text" placeholder="Last Name" autocomplete="off" asp-for="LastName" class="form-control bg-transparent" required />
+                                    <div class="text-danger">@Html.Raw(TempData["LastNameError"]) </div>
+                                    <!--end::Email-->
+                                </div>
+                                <!--end::Input group=-->
+                                <!--begin::Input group=-->
+                                <div class="fv-row mb-8">
+                                    <!--begin::Email-->
+                                    <input type="text" placeholder="Email Address" autocomplete="off" asp-for="EmailAddress" class="form-control bg-transparent" required />
+                                    <div class="text-danger">@Html.Raw(TempData["EmailAddressError"]) </div>
+                                    <!--end::Email-->
+                                </div>
+                                <!--end::Input group=-->
+                                <!--begin::Accept-->
+                                <div class="fv-row mb-8">
+                                    <label class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" name="toc" value="1" />
+                                        <span class="form-check-label fw-semibold text-gray-700 fs-base ms-1">
+                                            I Accept the
+                                            <a class="ms-1 link-primary">Terms</a>
+                                        </span>
+                                    </label>
+                                </div>
+                                <!--end::Accept-->
+                                <!--begin::Submit button-->
+                                <div class="d-grid mb-10">
+                                    <button type="submit" id="kt_sign_up_submit" class="btn btn-primary">
+                                        <!--begin::Indicator label-->
+                                        <span class="indicator-label">Sign up</span>
+                                        <!--end::Indicator label-->
+                                        <!--begin::Indicator progress-->
+                                        <span class="indicator-progress">
+                                            Please wait...
+                                            <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+                                        </span>
+                                        <!--end::Indicator progress-->
+                                    </button>
+                                </div>
+                                <!--end::Submit button-->
+                                <!--begin::Sign up-->
+                                <div class="text-gray-500 text-center fw-semibold fs-6">
+                                    Already have an Account?
+                                    <a asp-area="SEC_User" asp-controller="SEC_User" asp-action="SEC_UserSignIn" class="link-primary fw-semibold">Sign in</a>
+                                </div>
+                                <!--end::Sign up-->
+                            </form>
+                            <!--end::Form-->
+                        </div>
+                        <!--end::Wrapper-->
                     </div>
-                    <!--end::Wrapper-->
+                    <!--end::Content-->
                 </div>
-                <!--end::Content-->
+                <!--end::Wrapper-->
             </div>
-            <!--end::Wrapper-->
+            <!--end::Body-->
         </div>
-        <!--end::Body-->
     </div>
     <!--end::Authentication - Sign-up-->
 </div>
 <!--end::Root-->
-@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-}

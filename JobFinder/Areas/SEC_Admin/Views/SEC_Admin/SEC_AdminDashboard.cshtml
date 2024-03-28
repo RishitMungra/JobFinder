@@ -82,7 +82,12 @@
 @using System.Data
 @using JobFinder.BAL
 @model DataTable
-
+<style>
+    .job-count:hover {
+        transform: scale(1.02);
+        transition: transform 0.3s ease;
+    }
+</style>
 <div class="d-flex flex-column flex-root app-root" id="kt_app_root" >
     <!--begin::Page-->
     <div class="app-page flex-column flex-column-fluid" id="kt_app_page" >
